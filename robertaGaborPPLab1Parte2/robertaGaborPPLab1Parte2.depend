@@ -1,0 +1,141 @@
+# depslib dependency file v1.0
+1589913097 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"validaciones.h"
+
+1589915942 c:\ejercicios en c\gaborpplab1\robertagaborpplab1\validaciones.h
+
+1589913097 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\ecolor.c
+	"eColor.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589915942 c:\ejercicios en c\gaborpplab1\robertagaborpplab1\ecolor.h
+
+1589913097 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\emarca.c
+	"eMarca.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589915942 c:\ejercicios en c\gaborpplab1\robertagaborpplab1\emarca.h
+
+1589918036 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\eservicio.c
+	"eServicio.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589915035 c:\ejercicios en c\gaborpplab1\robertagaborpplab1\eservicio.h
+
+1589918537 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\eauto.c
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1589917009 c:\ejercicios en c\gaborpplab1\robertagaborpplab1\eauto.h
+	"eColor.h"
+	"eMarca.h"
+
+1589918592 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\etrabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+
+1589915809 c:\ejercicios en c\gaborpplab1\robertagaborpplab1\etrabajo.h
+
+1589917838 source:c:\ejercicios en c\gaborpplab1\robertagaborpplab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+
+1589918537 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eauto.c
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1589917009 c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eauto.h
+	"eColor.h"
+	"eMarca.h"
+
+1589915942 c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecolor.h
+
+1589915942 c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\emarca.h
+
+1589915942 c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\validaciones.h
+
+1589913097 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecolor.c
+	"eColor.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589913097 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\emarca.c
+	"eMarca.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589918036 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eservicio.c
+	"eServicio.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589915035 c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eservicio.h
+
+1589918592 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\etrabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+
+1589915809 c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\etrabajo.h
+
+1589917838 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+
+1589913097 source:c:\ejercicios en c\gabor.pplab1parte2.1a\robertagaborpplab1parte2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"validaciones.h"
+
