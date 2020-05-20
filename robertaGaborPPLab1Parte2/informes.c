@@ -140,7 +140,7 @@ void mostrarAutoMarcas(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarc
     {
         int flag=0;
         cargarDescripcionMarca(descripcionMarca,marcas[i].idMarca,marcas,tamMar);
-        printf("*****Autos de la marca %s:",descripcionMarca);
+        printf("*****Autos de la marca: %s\n",descripcionMarca);
         printf(" ID         COLOR       MARCA   MODELO    PATENTE     CLIENTE\n");
         for(int j=0;j<tamAu;j++)
         {
@@ -198,7 +198,7 @@ void marcaMasAtendida(eAuto autos[],int tamAu,eMarca marcas[],int tamMar)
     for(int i=0;i<tamMar;i++)
     {
         contador=0;
-        marcasAutos[i].idMarca==marcas[i].idMarca;
+        marcasAutos[i].idMarca=marcas[i].idMarca;
         for(int j=0;j<tamAu;j++)
         {
             if(autos[j].isEmpty==0&&autos[j].idMarca==marcasAutos[i].idMarca)
