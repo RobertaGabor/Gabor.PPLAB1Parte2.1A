@@ -192,7 +192,7 @@
 
 1589976604 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\etrabajo.h
 
-1589984122 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\main.c
+1589985972 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -219,7 +219,7 @@
 
 1589974810 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecliente.h
 
-1589982813 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\informes.c
+1589985458 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\informes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -231,5 +231,6 @@
 	"eTrabajo.h"
 	"informes.h"
 
-1589982224 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\informes.h
+1589985993 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\informes.h
+	"eTrabajo.h"
 

@@ -20,6 +20,9 @@ int menuInformes (void)
     printf("4-Mostrar todos los autos divididos por marcas\n");
     printf("5-Cantidad de autos segun color y marca\n");
     printf("6-Mostrar la o las marcas mas elegidas por los clientes\n");
+    printf("7-Trabajos realizados a un auto\n");
+    printf("8-Mostrar los servicios realizados a un auto a elegir\n");
+    printf("9-Mostrar los autos que realizaron un servicio a elegir\n");
     printf("0-Salir\n");
     printf("Que opcion desea?: ");
     scanf("%d",&opcion);
@@ -217,7 +220,7 @@ void marcaMasAtendida(eAuto autos[],int tamAu,eMarca marcas[],int tamMar)
     printf("\n*****La marca mas elegida por los clientes es: %s*****\n",marcaMayor);
 }
 
-void mostrarTrabajosDeUnAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra,eCliente clientes[],int tamCli)
+void mostrarTrabajosDeUnAuto (eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra)
 {
     system("cls");
     char patenteElegida[20];
@@ -230,6 +233,58 @@ void mostrarTrabajosDeUnAuto (eAuto autos[],int tamAu,eColor colores[],int tamCo
             if(strcmp(patenteElegida,trabajo[i].patente)==0&&trabajo[i].isEmpty==0)
             {
                 mostrarTrabajo(trabajo[i],servicio,tamServ);
+            }
+            printf("\n---------------------------------------------------------\n");
+        }
+    }
+}
+
+void mostrarServiciosDeUnAuto (eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra)
+{
+    system("cls");
+    char patenteElegida[20];
+    int contadorServicios;
+
+    if(getPatente(patenteElegida,20,"Ingrese patente a buscar: ","Error. ingrese patente valida",0))
+    {
+        system("cls");
+        printf("*****Suma de los servicios de la patente %10s\n",patenteElegida);
+        for(int i=0;i<tamTra;i++)
+        {
+            if(strcmp(patenteElegida,trabajo[i].patente)==0&&trabajo[i].isEmpty==0)
+            {
+                for(int j=0;j<tamServ;j++)
+                {
+                    if(trabajo[i].idServicio==servicio[j].idServicio)
+                    {
+                        contadorServicios+=servicio[j].precio;
+                    }
+                }
+
+            }
+            printf("\n---------------------------------------------------------\n");
+        }
+    }
+}
+
+void mostrarAutosDeUnServicio (eServicio servicio[],int tamServ,eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli,eTrabajo trabajos[],int tamTra)
+{
+    system("cls");
+    int idServicio;
+    char descripcionServicio1[25];
+
+    if(getInt(&idServicio,"Ingrese ID del servicio: ","Error debe ingresar un entero entre 20000 y 20003",20000,20003,0))
+    {
+        system("cls");
+        cargarDescripcionServicio(descripcionServicio1,idServicio,servicio,tamServ);
+        printf("*****Autos que realizaron el servicio %10s\n",descripcionServicio1);
+        printf("\nPATENTE    FECHA\n\n");
+        for(int i=0;i<tamTra;i++)
+        {
+            if(trabajos[i].isEmpty==0&&trabajos[i].idServicio==idServicio)
+            {
+                printf("%10s   %2.d/%2.d/%d\n\n",trabajos[i].patente,trabajos[i].fecha.dia,trabajos[i].fecha.mes,trabajos[i].fecha.anio);
+
             }
             printf("\n---------------------------------------------------------\n");
         }

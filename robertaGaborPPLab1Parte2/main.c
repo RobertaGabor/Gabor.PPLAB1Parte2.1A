@@ -149,6 +149,15 @@ int main()
                 case 6:
                     marcaMasAtendida(autos1,TAMAUTOS,marcas,TAMSMARCAS);
                     break;
+                case 7:
+                    mostrarTrabajosDeUnAuto(servicios,TAMSERVICIOS,trabajos,TAMTRABAJOS);
+                    break;
+                case 8:
+                    mostrarServiciosDeUnAuto(servicios,TAMSERVICIOS,trabajos,TAMTRABAJOS);
+                    break;
+                case 9:
+                    mostrarAutosDeUnServicio(servicios,TAMSERVICIOS,autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES,trabajos,TAMTRABAJOS);
+                    break;
                 case 0:
                     break;
                 default:
