@@ -35,7 +35,7 @@ int isEmpty;
  * \return devuelve 1 si se pudo dar de alta sino 0
  *
  */
-int altaTrabajo (int id,eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra);
+int altaTrabajo (int id,eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra,eCliente clientes[],int tamCli);
 /** \brief Analiza un vector de tipo eTrabajo y busca el primer indice con isEmpty=1
  *
  * \param trabajos[] eTrabajo vector a analizar

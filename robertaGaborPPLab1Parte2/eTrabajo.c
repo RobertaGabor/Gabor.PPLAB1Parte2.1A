@@ -36,7 +36,7 @@ void mostrartrabajos (eTrabajo trabajos[],int tamTra,eServicio servicios[],int t
     printf("\n");
 }
 
-int altaTrabajo (int id,eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra)
+int altaTrabajo (int id,eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eServicio servicio[],int tamServ,eTrabajo trabajo[], int tamTra,eCliente clientes[],int tamCli)
 {
     int indice=buscarLibreTrabajo(trabajo,tamTra);
     int retorno=0;
@@ -51,7 +51,7 @@ int altaTrabajo (int id,eAuto autos[],int tamAu,eColor colores[],int tamCol,eMar
     }
     else
     {
-        mostrarAutos(autos,tamAu,colores,tamCol,marcas,tamMar);
+        mostrarAutos(autos,tamAu,colores,tamCol,marcas,tamMar,clientes,tamCli);
             if(getPatente(auxiliar.patente,20,"\nIngrese patente del auto: ","Error ingrese una cadena valida",1))
             {
                 if(buscarPatenteAuto(auxiliar.patente,autos,tamAu)!=-1)

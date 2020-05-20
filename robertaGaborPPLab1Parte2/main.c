@@ -5,6 +5,7 @@
 #define TAMCOLORES 5
 #define TAMSMARCAS 5
 #define TAMAUTOS 1000
+#define TAMCLIENTES 10
 #define TAMTRABAJOS 1000
 #include "validaciones.h"
 #include "eAuto.h"
@@ -21,6 +22,8 @@ int main()
     eServicio servicios[TAMSERVICIOS]={{20000,"Lavado",250},{20001,"Pulido",300},{20002,"Encerado",400},{20003,"Completo",600}};
     eMarca marcas[TAMSMARCAS]={{1000,"Renault"},{1001,"Fiat"},{1002,"Ford"},{1003,"Chevrolet"},{1004,"Peugeot"}};
     eColor colores[TAMCOLORES]={{5000,"Negro"},{5001,"Blanco"},{5002,"Gris"},{5003,"Rojo"},{5004,"Azul"}};
+    eCliente clientes[TAMCLIENTES]={{10010,'f',"Juana"},{10011,'f',"Susana"},{10012,'m',"Elon"},{10013,'m',"Pedro"},{10014,'f',"Perla"},{10015,'f',"Daria"},{10016,'m',"Marcos"},{10017,'m',"Dorian"},{10018,'f',"Loise"},{10019,'m',"Clark"}};
+
     eAuto autos[TAMAUTOS];
     eTrabajo trabajos[TAMTRABAJOS];
 
@@ -40,7 +43,7 @@ int main()
         switch(opcionMenuMain)
         {
         case 1:
-            if(altaAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS))
+            if(altaAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES))
             {
                 printf("\n****Dado de alta exitosamente\n");
                 flag=1;
@@ -53,7 +56,7 @@ int main()
         case 2:
             if(flag==1)
             {
-                modificarDatosAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS);
+                modificarDatosAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
             }
             else
             {
@@ -65,7 +68,7 @@ int main()
         case 3:
             if(flag==1)
             {
-               bajaAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS);
+               bajaAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
                if(!buscarUnaCarga(autos,TAMAUTOS))
                {
                    flag=0;
@@ -80,7 +83,7 @@ int main()
             if(flag==1)
             {
                     ordenarAutos(autos,TAMAUTOS,marcas,TAMSMARCAS);
-                    mostrarAutos(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS);
+                    mostrarAutos(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
 
             }
             else
@@ -99,7 +102,7 @@ int main()
             mostrarServicios(servicios,TAMSERVICIOS);
             break;
         case 8:
-            if((flag==1)&&altaTrabajo(proximoIdTrabajo,autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,servicios,TAMSERVICIOS,trabajos,TAMTRABAJOS))
+            if((flag==1)&&altaTrabajo(proximoIdTrabajo,autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,servicios,TAMSERVICIOS,trabajos,TAMTRABAJOS,clientes,TAMCLIENTES))
             {
                 printf("\n****Dado de alta exitosamente\n");
                 proximoIdTrabajo++;

@@ -55,22 +55,22 @@ void ordenarAutos (eAuto autos[],int tamAu,eMarca marcas[],int tamMar)
     }
 }
 
-void mostrarAutos (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar)
+void mostrarAutos (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli)
 {
     system("cls");
     printf("**********Listado de Autos*********\n");
-    printf(" ID         COLOR       MARCA   MODELO    PATENTE\n");
+    printf(" ID         COLOR       MARCA   MODELO    PATENTE     CLIENTE\n");
     for(int i=0;i<tamAu;i++)
     {
         if(autos[i].isEmpty==0)
         {
-             mostrarAuto(autos[i],colores,tamCol,marcas,tamMar);
+             mostrarAuto(autos[i],colores,tamCol,marcas,tamMar,clientes,tamCli);
         }
 
     }
 }
 
-void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar)
+void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli)
 {
     int indiceID;
     char patente[20];
@@ -89,7 +89,7 @@ void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[
         else
         {
             printf("ID         COLOR      MARCA    MODELO     PATENTE\n");
-            mostrarAuto(autos[indiceID],colores,tamCol,marcas,tamMar);
+            mostrarAuto(autos[indiceID],colores,tamCol,marcas,tamMar,clientes,tamCli);
             printf("\n\nDesea comfirmar baja?: \n");
             printf("s - para confirmar\n");
             fflush(stdin);
@@ -109,14 +109,16 @@ void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[
 
 }
 
-void mostrarAuto(eAuto autos,eColor colores[],int tamCol,eMarca marcas[],int tamMar)
+void mostrarAuto(eAuto autos,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli)
 {
     char marca[20];
     char color[20];
+    char cliente[20];
     cargarDescripcionColor(color,autos.idColor,colores,tamCol);
     cargarDescripcionMarca(marca,autos.idMarca,marcas,tamMar);
+    cargarDescripcionCliente(cliente,autos.idCliente,clientes,tamCli);
 
-    printf("\n%2.d    %10s   %10s    %d  %10s\n\n",autos.idAuto,color,marca,autos.modelo,autos.patente);
+    printf("\n%2.d    %10s   %10s    %d  %10s  %10s\n\n",autos.idAuto,color,marca,autos.modelo,autos.patente,cliente);
 }
 
 int buscarAutoId(int id,eAuto autos[],int tamAu)
@@ -133,7 +135,7 @@ int buscarAutoId(int id,eAuto autos[],int tamAu)
 
     return indice;
 }
-int modificarDatosAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar)
+int modificarDatosAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli)
 {
     char patente[20];
     int retorno=0;
@@ -167,7 +169,7 @@ int modificarDatosAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarc
                     system("cls");
                     printf("*****Auto seleccionado*****\n");
                     printf("ID         COLOR      MARCA    MODELO     PATENTE\n");
-                    mostrarAuto(autos[indice],colores,tamCol,marcas,tamMar);
+                    mostrarAuto(autos[indice],colores,tamCol,marcas,tamMar,clientes,tamCli);
 
                     printf("\n\n");
                     system("pause");
@@ -242,7 +244,7 @@ int buscarLibre(eAuto autos[],int tamAu)
     return encontrado;
 }
 
-int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar)
+int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli)
 {
     int indice=buscarLibre(autos,tamAu);
 
@@ -263,18 +265,21 @@ int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[
             if(getPatente(auxiliar.patente,20,"Ingrese patente: ","Error Ingrese cadena valida",1)&&buscarPatenteAuto(auxiliar.patente,autos,tamAu)==-1)
             {
                 if(getInt(&auxiliar.modelo,"Ingrese anio de fabricacion: ","Error ingrese un anio valido",1000,2020,1))
-                {
-                    mostrarColores(colores,tamCol);
-                    if(getInt(&auxiliar.idColor,"Ingrese ID color: ","Error debe ser un entero entre 5000 y 5004",5000,5004,1))
+                {   mostrarClientes(clientes,tamCli);
+                    if(getInt(&auxiliar.idCliente,"Ingrese ID del cliente: ","Error debe ingresar un ID entre 10010 y 10019",10010,10019,1))
                     {
-                        mostrarMarcas(marcas,tamMar);
-                        if(getInt(&auxiliar.idMarca,"Ingrese ID marca: ","Error debe ser un entero entre 1000 y 1004",1000,1004,1))
+                        mostrarColores(colores,tamCol);
+                        if(getInt(&auxiliar.idColor,"Ingrese ID color: ","Error debe ser un entero entre 5000 y 5004",5000,5004,1))
                         {
-                            auxiliar.isEmpty=0;
-                            autos[indice]=auxiliar;
-                            retorno=1;
-                        }
+                            mostrarMarcas(marcas,tamMar);
+                            if(getInt(&auxiliar.idMarca,"Ingrese ID marca: ","Error debe ser un entero entre 1000 y 1004",1000,1004,1))
+                            {
+                                auxiliar.isEmpty=0;
+                                autos[indice]=auxiliar;
+                                retorno=1;
+                            }
 
+                        }
                     }
                 }
             }
@@ -282,14 +287,15 @@ int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[
             {
                 printf("\nLa patente ya existe\n");
             }
-
         }
         else
         {
             printf("\nEl ID ya existe o no cumple los requisitos de IDs\n");
         }
+
     }
-return retorno;
+
+  return retorno;
 }
 
 void inicializarAutos(eAuto autos[],int tamAu)

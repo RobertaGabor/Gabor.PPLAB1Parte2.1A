@@ -139,3 +139,82 @@
 	<ctype.h>
 	"validaciones.h"
 
+1589976529 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eauto.c
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1589976289 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eauto.h
+	"eColor.h"
+	"eMarca.h"
+	"eCliente.h"
+
+1589971257 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecolor.h
+
+1589971257 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\emarca.h
+
+1589971257 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\validaciones.h
+
+1589971257 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecolor.c
+	"eColor.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589971257 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\emarca.c
+	"eMarca.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589971257 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eservicio.c
+	"eServicio.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589971257 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eservicio.h
+
+1589976571 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\etrabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+
+1589976604 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\etrabajo.h
+
+1589976640 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+
+1589971257 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"validaciones.h"
+
+1589974879 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eciente.c
+	"eCliente.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589974810 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecliente.h
+

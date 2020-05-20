@@ -2,6 +2,7 @@
 #define EAUTO_H_INCLUDED
 #include "eColor.h"
 #include "eMarca.h"
+#include "eCliente.h"
 
 typedef struct{
 
@@ -10,6 +11,7 @@ char patente[20];
 int idMarca;
 int idColor;
 int modelo;
+int idCliente;
 int isEmpty;
 
 }eAuto;
@@ -25,7 +27,7 @@ int isEmpty;
 * \return 1 si se pudo dar de alta sino 0
  *
  */
-int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar);
+int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli);
 /** \brief Se elige si modificar color o modelo en un indice del vector de tipo eAuto (de un auto en particular)
  *
  * \param autos[] eAuto vector que se modifica
@@ -37,7 +39,7 @@ int altaAuto (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[
  * \return int devuelve 1 si se pudo modificar sino 0
  *
  */
-int modificarDatosAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar);
+int modificarDatosAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli);
 /** \brief Busca el ID de auto en un vector y si lo encuentra devuelve el indice
  *
  * \param id int Id buscado
@@ -57,7 +59,7 @@ int buscarAutoId(int id,eAuto autos[],int tamAu);
  * \return void
  *
  */
-void mostrarAuto(eAuto autos,eColor colores[],int tamCol,eMarca marcas[],int tamMar);
+void mostrarAuto(eAuto autos,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli);
 /** \brief Baja logica de un auto, pide patente y si la encuentra convierte la celda isEmpty en 1
  *
  * \param autos[] eAuto vector autos
@@ -69,7 +71,7 @@ void mostrarAuto(eAuto autos,eColor colores[],int tamCol,eMarca marcas[],int tam
  * \return void
  *
  */
-void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar);
+void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli);
 /** \brief Muestra los datos de todos los autos disponibles con isEmpty en 0
  *
  * \param vector tipo eAuto de autos
@@ -81,7 +83,7 @@ void bajaAuto(eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[
  * \return void
  *
  */
-void mostrarAutos (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar);
+void mostrarAutos (eAuto autos[],int tamAu,eColor colores[],int tamCol,eMarca marcas[],int tamMar,eCliente clientes[],int tamCli);
 /** \brief ordena el vector autos por marca y por patente
  *
  * \param vector autos de estructura eAuto
