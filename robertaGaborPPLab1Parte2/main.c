@@ -13,6 +13,7 @@
 #include "eMarca.h"
 #include "eServicio.h"
 #include "eTrabajo.h"
+#include "informes.h"
 
 
 int menu(void);
@@ -24,18 +25,19 @@ int main()
     eColor colores[TAMCOLORES]={{5000,"Negro"},{5001,"Blanco"},{5002,"Gris"},{5003,"Rojo"},{5004,"Azul"}};
     eCliente clientes[TAMCLIENTES]={{10010,'f',"Juana"},{10011,'f',"Susana"},{10012,'m',"Elon"},{10013,'m',"Pedro"},{10014,'f',"Perla"},{10015,'f',"Daria"},{10016,'m',"Marcos"},{10017,'m',"Dorian"},{10018,'f',"Loise"},{10019,'m',"Clark"}};
 
-    eAuto autos[TAMAUTOS];
-    eTrabajo trabajos[TAMTRABAJOS];
+    eAuto autos1[TAMAUTOS]={{1,"dias12",1000,5000,1989,10010,0},{2,"pepe4",1000,5003,2001,10011,0},{3,"totof4",1002,5004,2010,10012,0},{4,"lui89o0",1004,5000,1975,10016,0}};
+    eTrabajo trabajos[TAMTRABAJOS]={{10,"dias12",20000,{1,9,1997},0},{11,"pepe4",20001,{2,12,2001},0},{12,"totof4",20002,{11,3,2012},0}};
 
     char seguir='s';
     int opcionMenuMain;
+    int opcionInformes;
     int proximoIdTrabajo=10;
     int flag=0;
     int flagb=0;
 
-    inicializarAutos(autos,TAMAUTOS);
+    inicializarAutos(autos1,TAMAUTOS);
     inicializarTrabajos(trabajos,TAMTRABAJOS);
-
+    proximoIdTrabajo=proximoIdTrabajo+3;
 
     do
     {
@@ -43,7 +45,7 @@ int main()
         switch(opcionMenuMain)
         {
         case 1:
-            if(altaAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES))
+            if(altaAuto(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES))
             {
                 printf("\n****Dado de alta exitosamente\n");
                 flag=1;
@@ -56,7 +58,7 @@ int main()
         case 2:
             if(flag==1)
             {
-                modificarDatosAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                modificarDatosAuto(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
             }
             else
             {
@@ -68,8 +70,8 @@ int main()
         case 3:
             if(flag==1)
             {
-               bajaAuto(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
-               if(!buscarUnaCarga(autos,TAMAUTOS))
+               bajaAuto(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+               if(!buscarUnaCarga(autos1,TAMAUTOS))
                {
                    flag=0;
                }
@@ -82,8 +84,8 @@ int main()
         case 4:
             if(flag==1)
             {
-                    ordenarAutos(autos,TAMAUTOS,marcas,TAMSMARCAS);
-                    mostrarAutos(autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                    ordenarAutos(autos1,TAMAUTOS,marcas,TAMSMARCAS);
+                    mostrarAutos(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
 
             }
             else
@@ -102,7 +104,7 @@ int main()
             mostrarServicios(servicios,TAMSERVICIOS);
             break;
         case 8:
-            if((flag==1)&&altaTrabajo(proximoIdTrabajo,autos,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,servicios,TAMSERVICIOS,trabajos,TAMTRABAJOS,clientes,TAMCLIENTES))
+            if((flag==1)&&altaTrabajo(proximoIdTrabajo,autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,servicios,TAMSERVICIOS,trabajos,TAMTRABAJOS,clientes,TAMCLIENTES))
             {
                 printf("\n****Dado de alta exitosamente\n");
                 proximoIdTrabajo++;
@@ -123,6 +125,39 @@ int main()
                 printf("\n*****No hay trabajos que listar*****\n");
             }
             break;
+        case 10:
+
+            do
+            {   opcionInformes=menuInformes();
+                switch(opcionInformes)
+                {
+                case 1:
+                    mostrarAutosSegunColor(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                    break;
+                case 2:
+                    mostrarAutosSegunMarca(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                    break;
+                case 3:
+                    autoMasViejo(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                    break;
+                case 4:
+                    mostrarAutoMarcas(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                    break;
+                case 5:
+                    cantidadSegunMarcayColor(autos1,TAMAUTOS,colores,TAMCOLORES,marcas,TAMSMARCAS,clientes,TAMCLIENTES);
+                    break;
+                case 6:
+                    marcaMasAtendida(autos1,TAMAUTOS,marcas,TAMSMARCAS);
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("*****Opcion invalida*****\n");
+                    break;
+                }
+                system("pause");
+            }while(opcionInformes!=0);
+            break;
         case 0:
             seguir='n';
             break;
@@ -130,12 +165,10 @@ int main()
             printf("\n*****Opcion invalida*****\n");
             break;
         }
-
         system("pause");
-    }while(seguir=='s');
+    } while(seguir=='s');
 
     return 0;
-
 }
 
 int menu(void)
@@ -154,6 +187,7 @@ int menu(void)
     printf("7-Listar servicios\n");
     printf("8-Alta trabajo\n");
     printf("9-Listar trabajos\n");
+    printf("10-Informes\n");
     printf("0-salir\n");
     printf("Ingrese la opcion: ");
     fflush(stdin);

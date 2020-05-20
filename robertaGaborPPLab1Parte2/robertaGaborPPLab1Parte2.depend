@@ -139,7 +139,7 @@
 	<ctype.h>
 	"validaciones.h"
 
-1589976529 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eauto.c
+1589976789 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\eauto.c
 	"eAuto.h"
 	"eColor.h"
 	"eMarca.h"
@@ -192,7 +192,7 @@
 
 1589976604 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\etrabajo.h
 
-1589976640 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\main.c
+1589984122 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -202,6 +202,7 @@
 	"eMarca.h"
 	"eServicio.h"
 	"eTrabajo.h"
+	"informes.h"
 
 1589971257 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\validaciones.c
 	<stdio.h>
@@ -217,4 +218,18 @@
 	<string.h>
 
 1589974810 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\ecliente.h
+
+1589982813 source:c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"eAuto.h"
+	"eColor.h"
+	"eMarca.h"
+	"eServicio.h"
+	"eTrabajo.h"
+	"informes.h"
+
+1589982224 c:\ejercicios en c\parciales\gabor.pplab1parte2.1a\robertagaborpplab1parte2\informes.h
 
